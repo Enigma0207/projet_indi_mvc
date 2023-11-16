@@ -1,0 +1,187 @@
+.container{
+   
+    width: 50%;
+    margin: auto;
+    background-color: rgba(245, 245, 220, 0.473);
+    margin-top: 20px;
+
+}
+body{
+        background-color: rgba(245, 245, 220, 0.438);
+
+}
+table{
+   margin-top: 20px;
+   text-align: center;
+}
+
+header{
+    width: 100%;
+    background-color: rgba(144, 165, 158, 0.458);
+
+}
+.log_url{
+    padding-top: 15px ;
+    display: flex;
+    justify-content: space-between;
+    /* margin: 20px; */
+    color: rgb(4, 157, 217);
+    margin-left: 20px;
+    padding-bottom: 15px;
+}
+ ul {
+    display: flex;
+
+}
+
+ ul li {
+    display: flex;
+   list-style-type: none;
+   
+}
+ li a {
+   margin: 0 20px;
+   text-decoration: none;
+   color: rgb(4, 157, 217);
+}
+
+
+/* index */
+#generale{
+    width: 100%;
+    background-color: rgba(245, 245, 220, 0.473);
+    /* margin-top:-10px; */
+    /* height: 1000px; */
+}
+section{
+    display: flex;
+    width: 60%;
+    margin: auto;
+    /* margin-top: -10PX; */
+}
+section img{
+    width: 400px;
+    height: 300px;
+    margin-bottom: 5px;
+}
+.image{
+    width: 60%;
+}
+.autre{
+    width: 40%;
+     padding-top: 30px;
+     margin-left: 20PX;
+}
+.autre a{
+    /* padding: 3px; */
+    border-radius: 3px 3px 3px 3px;
+    background-color: rgb(58, 112, 133);
+    width: 15px;
+    color: white;
+    text-decoration: none;
+
+   
+}
+
+/* liste */
+/* Style de base pour le menu */
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  display: inline-block;
+  margin-right: 20px; /* Espacement entre les éléments du menu */
+  
+}
+
+/* Sous-menu initialement caché */
+.sub-menu {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* Vous pouvez personnaliser la couleur de fond */
+  /* background-color: rgb(165, 119, 119);  */
+  position: absolute;
+  z-index: 1;
+ 
+}
+
+.sub-menu li {
+  padding:5px;
+  text-align: center;
+  border-bottom: 1px solid #ccc; /* Vous pouvez personnaliser les bordures */
+  
+}
+
+/* Effet de survol sur la balise li principale */
+.hover-trigger:hover .sub-menu {
+  display:block;
+  
+}
+/* footer */
+iframe{
+    width:500px;
+    height: 150px;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(144, 165, 158, 0.458);
+
+
+}
+.footer p{
+   margin: 0;
+   padding: 0;
+   text-align: center;
+}
+.textfooter{
+    padding-top: 30px;
+    padding-right: 30px;
+    color: rgb(4, 157, 217);
+}
+hr{
+    background-color: black;
+    margin: 0;
+    /* width: 100%; */
+}
+
+
+
+
+.reserved {
+    background-color: red; /* Surligner en rouge */
+    color: white; /* Texte blanc pour contraste */
+}
+
+.logout{
+   color: rgb(4, 157, 217); 
+    background: rgba(255,255,255,0);
+    border-style : none; 
+}
+
+.reserannu{
+    background-color: rgb(204,214,210);
+   color: rgb(4, 157, 217); 
+    padding: 5px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+ span{
+     color: red;
+ }
+ 
+.ici{
+ padding:2px 20px;
+}
+
+.titre{
+    margin-left: 300px;
+     color: rgb(4, 157, 217);
+
+}
