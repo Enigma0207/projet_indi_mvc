@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once "./views/inc/header.php";
 require_once './models/permisModel.php';
 require_once './models/userModel.php';

@@ -3,12 +3,17 @@
 namespace Controller;
 
 use Controller\BaseController;
+use Models\Entity\User;
+use Models\Repository\UserRepository;
+use Form\UserHandleRequest;
 
 class UserController extends BaseController 
 {
     //1.1 METHODE D'INSCRIPTION
-    public function add_user($firstname, $lastname, $email, $password, $phone)
+    public function add_user()
     {
+
+        //dans cette classe (UserController),execute la méthode 'render'(en provenance de BaseController) avec paramettre une chaine de caractère :add_user.php
         $this->render("add_user.php");
 
     }
@@ -28,11 +33,5 @@ class UserController extends BaseController
         $this->render("listeUser.php");
     }
 
-
-
-
-
-
-
-
 }
+

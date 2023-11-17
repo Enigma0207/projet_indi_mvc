@@ -1,10 +1,6 @@
 <?php
-
 $mode = $mode ?? "insertion";
 require "views/errors_form.html.php";
-include_once '../Traitement/UserAction.php';
-UserAction::insertUserAction();
-include_once "../public/header.php";
 ?>
 
 <div class="container">
@@ -13,27 +9,27 @@ include_once "../public/header.php";
          
          <div class="form-group">
            <label for="firstname"> firstname:</label>
-           <input type="text" name="firstname" id="firstname" class="form-control" id="firstname" value="<?=$user->getFirstname() ?>" <?=$mode == "suppression" ? "disabled" : ""?> >
+           <input type="text" name="firstname" id="firstname" class="form-control" id="firstname" value="" <?=$mode == "suppression" ? "disabled" : ""?> >
          </div>
          <div class="form-group">
            <label for="lastname"> lastname:</label>
-           <input type="text" class="form-control" id="lastname" value="<?=$user->getLastname() ?>" <?=$mode == "suppression" ? "disabled" : ""?> >
+           <input type="text" class="form-control" id="lastname" value="" <?=$mode == "suppression" ? "disabled" : ""?> >
          </div>
          <div class="form-group">
            <label for="phone"> phone:</label>
-           <input type="number" class="form-control" id="phone" value="<?=$user->getPone() ?>" <?=$mode == "suppression" ? "disabled" : ""?> >
+           <input type="number" class="form-control" id="phone" value="" <?=$mode == "suppression" ? "disabled" : ""?> >
          </div>
          <div class="form-group">
            <label for="email">email :</label>
-           <input type="email" class="form-control" id="email" value="<?=$user->getEmail() ?>" <?=$mode == "suppression" ? "disabled" : ""?> >
+           <input type="email" class="form-control" id="email" value="" <?=$mode == "suppression" ? "disabled" : ""?> >
          </div>
          <div class="form-group">
            <label for="password">password :</label>
-           <input type="text" class="form-control" id="password" value="<?=$user->getPassword() ?>" <?=$mode == "suppression" ? "disabled" : ""?> >
+           <input type="text" class="form-control" id="password" value="" <?=$mode == "suppression" ? "disabled" : ""?> >
          </div>
          <div class="form-group">
            <label for="niveau">Role</label>
-           <input type="text" name="niveau" id="niveau" class="form-control" value="<?= $user->getRole() ?>" <?= $mode == "suppression" ? "disabled" : "" ?>>
+           <input type="text" name="niveau" id="niveau" class="form-control" value="" <?= $mode == "suppression" ? "disabled" : "" ?>>
          </div>
          
          <div class="d-flex justify-content-between">

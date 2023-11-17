@@ -1,6 +1,4 @@
 <?php
-session_start();
-include_once "./views/inc/header.php";
 require_once './models/creneauxModel.php';
 // pour message de connexion
 if (isset($_SESSION["success_message"])) {

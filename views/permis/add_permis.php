@@ -1,6 +1,4 @@
 <?php
-session_start();
-include_once "./views/inc/header.php";
 
 if (isset($_SESSION["success_message"])) {
     echo $_SESSION["success_message"];
