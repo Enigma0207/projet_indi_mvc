@@ -1,7 +1,10 @@
 <?php
+// cette fonction simplifie la création de liens en permettant de spécifier le contrôleur, la méthode et un éventuel identifiant,
+
 function addLink($controller, $method = "liste", $id = null)
 {
     // return ROOT . "?controller=$controller&method=$method" . ($id ? "&id=$id" : "");
+    //c'est un lien comme valeur de retour projet_indi_mvc/user/list/32 ou user\list
     return ROOT . "$controller/$method" . ($id ? "/$id" : "");
 }
 
