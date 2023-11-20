@@ -1,6 +1,7 @@
 # projet_individuel
 
 structure mvc
+
 /*Controller Controller/BaseController.php Controller/HomeController.php Controller/UserController.php 
 Form Form/BaseHandleRequest.php Form/UserHandleRequest.php 
 inc inc/autoload.php inc/function.php inc/init.inc.php 
@@ -131,7 +132,7 @@ function d_die($var)
 
         extract($parametres);// Extrait les paramètres pour les rendre accessibles comme des variables locale
         include "public/header.html.php";
-        include "views/user/$fichier";
+        include "views/$fichier"; // affiche moi le fichier demandé depuis views
         include "public/footer.html.php";
 
     }
@@ -164,7 +165,239 @@ class UserController extends BaseController
 
 .........................FIN...controller.............................................
 
-6.les entity dans model/entity
+6.les entity dans models/entity
+
+6.1 namespace Model\Entity; //les dossiers
+
+//création de la class BaseEntity conçue pour être utilisée comme classe mère pour d'autres classes entité dans un modèle. 
+6.2 class BaseEntity
+{
+    protected $id; //identifiant de l'entité pour cette class elle-même et ses enfants(classes)  dérivées) mais pas ailleurs
+
+    /**
+     * Set the value of id
+     *
+     * @param integer $id
+     * @return void
+     */
+
+6.2.a getter et setter id
+
+    // on definie une methode setId sans valeur de retour qui prend le paramettre un entier et sera affecté a notre propieté proteted $id
+
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * Get the value of id
+     *
+     * @return integer
+     */
+
+      //cette methode permet de recuperer enfait la valeur de $id
+
+   public function getId(): int
+    {
+        return $this->id;
+    }
+
+   
+
+   public function __toString()
+    {
+        $class = get_called_class();
+
+        $class = explode("\\", $class);        .
+        $table = $class[count($class) - 1];
+        return strToLower($table);
+    }
+}
+
+.........................FIN...controller.............................................
+
+7.fichier User.php dans entity
+
+7.1 namespace Model\Entity   // les dossiers
+7.3 créer la class User enfant de BaseEntity
+7.4 definir les proprietés en private comme dans le formulaire
+class User extends BaseEntity
+{
+    private $firstname;
+    private $lastname;
+    private $phone;
+    private $email;
+    private $password;
+    private $role;
+
+// EXEMPLE:user = new User();
+$user->setFirstname("John");
+$firstName = $user->getFirstname(); // Obtient la valeur du prénom
+
+
+
+public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * Set the value of firstname
+     *
+     * @return  self
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+    /**
+     * Get the value of lastname
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * Set the value of lastname
+     *
+     * @return  self
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+    /**
+     * Get the value of phone
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Set the value of phone
+     *
+     * @return  self
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+    /**
+     * Get the value of lastname
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set the value of email
+     *
+     * @return  self
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of mdp
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Set the value of mdp
+     *
+     * @return  self
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    
+    /**
+     * Get the value of role
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * Set the value of role
+     *
+     * @return  self
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
+} 
+
+.........................FIN...entity.............................................
+
+7.fichier dossier Repository dans models
+
+7.1 BaseRepository.php
+7.1.1 namespace Models\Repository;  // les dossiers
+7.1.2 use Models\Database; // apl la bdd
+7.1.3 use Models\Entity\BaseEntity;// apl la BaseEntity
+7.1.4 création de la baseRepository cad une classe
+
+class BaseRepository
+{
+    
+    
+    //propriété protégée $dbConnect qui sera utilisée pour stocker la connexion à la base de données.
+   protected $dbConnect;
+
+   
+   public function __construct()
+   {
+      //on instancie la class database pour la connexion 
+      $db = new Database;
+
+      //on on apl la methode dbConnect de l'objet $db pour établir la connexion on le stock dans $dbConnection (notre connexion)
+      $this->dbConnection = $db->dbConnect();
+   }
+
+
+ 
+}
+
+7.2 UserRepository.php
+
+7.2.1 namespace Models\Repository;
+
+7.2.1 use Model\Entity\User;
+7.2.1 use Service\Session;
+
+7.2.3 class UserRepository enfant de BaseRepository
+ -methode plublic function insertUser(User $user)
+
+
+
+
 
 
 

@@ -1,6 +1,7 @@
 <?php
 
 namespace Model\Entity;// les deux dossier contenant la class user
+use Model\Entity\BaseEntity;
 
 class User extends BaseEntity
 {

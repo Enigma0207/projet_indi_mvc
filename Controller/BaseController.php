@@ -9,7 +9,7 @@ abstract class BaseController
 
         extract($parametres);
         include "public/header.html.php";
-        include "views/user/$fichier";
+        include "views/$fichier";
         include "public/footer.html.php";
     }  
 }
